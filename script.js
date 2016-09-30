@@ -11,6 +11,32 @@
 
 var productList = []; //this is an array
 
+var Sneakers1 = {
+	name: "JACKSHIBO Men Women Unisex Couple Casual Fashion Sneakers Breathable Athletic Sports Shoes",
+	price: 18.99,
+	manufacture: "JACKSHIBO"
+}
+
+var Sneakers2 = {
+	name: "ASICS Men's GEL Venture 5 Running Shoe",
+	price: 46.75,
+	manufacture: "ASICS"
+}
+
+var Sneakers3 = {
+	name: "New Balance Men's MX608V4 Training Shoe",
+	price: 19.91,
+	manufacture: "New Balance"
+}
+
+var Sneakers4 = {
+	name: "Dream Pairs Boy's Casual Velcro Strap Casual Shoes Sneakers Loafers",
+	price: 13.99,
+	manufacture: "DREAM PAIRS"
+}
+
+productList.push( Sneakers1, Sneakers2, Sneakers3, Sneakers4);
+
 //Your code here
 //Hint: productList.push(newObject) will add the object you just created to the array
 
@@ -24,8 +50,8 @@ console.log(productList[0]);
 for(var i = 0; i < productList.length; i++){
 
     //Your code here
-
-    console.log();
+if (productList[i].price < 50 ) {
+    console.log("This sneaker," + productList[i].name +", its cost is " + productList[i].price );
 }
 
 /* Step 3
@@ -34,8 +60,14 @@ for(var i = 0; i < productList.length; i++){
 
 //3.1 first, calculate total price using the for loop again
 
-//3.2 then, divide total price by the number of products, using proudctList.length
+var totalPrice = 0;
+for (var i= 0; i<productList.length; i++){
+	totalPrice+=productList[i].price;
+}
 
+//3.2 then, divide total price by the number of products, using proudctList.length
+var averagePrice = totalPrice/productList.length;
+console.log("The average price of sneakers is " + averagePrice);
 
 /* Step 4
  * Write a function that accept a single argument, price
@@ -47,7 +79,11 @@ function comparePrice(p){
     var numOfMatchingProducts = 0;
 
     //Your code here
-
+for (var i=0; i<productList.length; i++){
+if (productList[i].price < p){
+	numOfMatchingProducts+=1;
+}
+}
     return numOfMatchingProducts;
 }
 
