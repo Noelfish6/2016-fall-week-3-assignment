@@ -51,8 +51,10 @@ for(var i = 0; i < productList.length; i++){
 
     //Your code here
 if (productList[i].price < 50 ) {
-    console.log("This sneaker," + productList[i].name +", its cost is " + productList[i].price );
+    console.log("This sneaker," + productList[i].name + ", its cost is " + productList[i].price );
 }
+}
+
 
 /* Step 3
  * What is the average price of all the products?
